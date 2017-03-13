@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import App from '../container/app'
-// import ActiveUser from '../container/activeUser'
+import UserData from '../container/activeUser'
 
 
 class Todo extends Component {
@@ -10,7 +10,7 @@ class Todo extends Component {
                 <h2>User List</h2>
                 <App />
                 <h2>User Details</h2>
-                {/*<ActiveUser/>*/}
+                <UserData/>
             </div>
         );
     }
