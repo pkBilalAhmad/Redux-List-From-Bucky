@@ -2,7 +2,13 @@ import React, { Component } from 'react'
 import ReactDOM from 'react-dom'
 var root = document.getElementById('root')
 
+
 class Txt extends Component {
+  componentWillReceiveProps(nextProps,prevProps) {
+    console.log(nextProps)
+    console.log(prevProps)
+    document.getElementById('app').innerHTML += this.props.text
+  }
   render() {
     return (
       <div>
@@ -15,7 +21,6 @@ class Txt extends Component {
 }
 
 class App extends Component {
-  
   constructor(props) {
     super(props);
     this.state = { text: " Bilal" }
@@ -28,7 +33,6 @@ class App extends Component {
   render() {
     return (
       <div>hello
-        {alert("render")}
         <input type="text" value={this.state.text} onChange={this.change.bind(this)} />
         <Txt text={this.state.text} />
       </div>

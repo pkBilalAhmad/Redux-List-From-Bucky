@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import ReactDOM from 'react-dom'
 var root = document.getElementById('root')
-
 class Txt extends Component {
   render() {
     return (
@@ -15,7 +14,30 @@ class Txt extends Component {
 }
 
 class App extends Component {
-  
+  _log(methodName, args) {
+    console.log(methodName, args);
+  }
+  componentWillUpdate() {
+    alert('componentWillUpdate', arguments);
+    this._log('componentWillUpdate', arguments);
+  }
+  componentDidUpdate() {
+    alert('componentDidUpdate', arguments);
+    this._log('componentDidUpdate', arguments);
+  }
+  componentWillMount() {
+    alert('componentWillMount', arguments);
+    this._log('componentWillMount', arguments);
+  }
+  componentDidMount() {
+    alert('componentDidMount', arguments);
+    this._log('componentDidMount', arguments);
+  }
+  componentWillUnmount() {
+    alert('componentWillUnmount', arguments);
+    this._log('componentWillUnmount', arguments);
+  }
+
   constructor(props) {
     super(props);
     this.state = { text: " Bilal" }
