@@ -1,12 +1,8 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import App from './components/app'
+import App from './components/index'
 import { Provider } from 'react-redux'
-import allReducer from './reducers/allReducers'
-import { createStore, applyMiddleware } from 'redux'
-import createLogger from 'redux-logger'
-const logger = createLogger()
-const store = createStore(allReducer, applyMiddleware(logger))
+import { store } from './store/index'
 
 
 ReactDOM.render(
